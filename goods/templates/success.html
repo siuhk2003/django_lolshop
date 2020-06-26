@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Lol Shop-提交訂單</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+</head>
+<body>
+	<div class="search_bar clearfix">
+		<a href="/index/" class="logo fl"><img src="/static/images/logo.png"></a>
+		<div class="sub_page_name fl">|&nbsp;&nbsp;&nbsp;&nbsp;訂單提交成功</div>
+	</div>
+
+
+	<h3 class="common_title">商品列表</h3>
+	<div class="common_list_con clearfix">
+		<ul class="goods_list_th clearfix">
+			<li class="col01">商品名稱</li>
+			<li class="col03">商品價格</li>
+			<li class="col04">數量</li>
+			<li class="col05">小計</li>
+		</ul>
+
+		{% for order_goods in order_goods_list %}
+        <ul class="goods_list_td clearfix">
+			<li class="col01">{{ forloop.counter }}</li>
+			<li class="col02"><img src="/media/{{ order_goods.goods_info.goods_img }}"></li>
+			<li class="col03">{{ order_goods.goods_info.goods_name }}</li>
+			<li class="col05">{{ order_goods.goods_info.goods_price }}元</li>
+			<li class="col06">{{ order_goods.goods_num }}</li>
+			<li class="col07">{{ order_goods.total_money }}元</li>
+		</ul>
+        {% endfor %}
+
+	</div>
+
+	<h3 class="common_title">訂單訊息</h3>
+	<div class="common_list_con clearfix">
+		<dl>
+			<dd>
+				<table>
+                    <tr>
+						<td width="100">訂單編號:</td><td>{{ order_info.order_id }}</td>
+					</tr>
+					<tr>
+						<td>收貨地址:</td><td>{{ order_info.order_addr }}</td>
+					</tr>
+					<tr>
+						<td>收貨人:</td><td>{{ order_info.order_recv }}</td>
+					</tr>
+					<tr>
+						<td>聯絡電話:</td><td>{{ order_info.order_tele }}</td>
+					</tr>
+					<tr>
+						<td>備註:</td><td>{{ order_info.order_extra }}</td>
+					</tr>
+				</table>
+			</dd>
+		</dl>
+	</div>
+
+    <h3 class="common_title">總金額結算</h3>
+	<div class="common_list_con clearfix">
+		<div class="settle_con">
+			<div class="total_goods_count">共<em>{{ total_num }}</em>件商品，總金額<b>{{ total_money }}元</b></div>
+			<div class="transit">運費：<b>10元</b></div>
+			<div class="total_pay">實付款：<b>{{ total_money|add:10 }}元</b></div>
+		</div>
+	</div>
+
+
+	<div class="footer">
+		<div class="foot_link">
+			<a href="#">關於我們</a>
+			<span>|</span>
+			<a href="#">聯絡我們</a>
+			<span>|</span>
+			<a href="#"></a>
+			<span>|</span>
+			<a href="#"></a>
+		</div>
+		<p>All Rights Reserved</p>
+		<p></p>
+	</div>
+
+	<div class="popup_con">
+		<div class="popup">
+			<p>訂單提交成功！</p>
+		</div>
+
+		<div class="mask"></div>
+	</div>
+</body>
+</html>
