@@ -1,0 +1,1 @@
+web: gunicorn lolshop.wsgi --log-file -
