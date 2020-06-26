@@ -79,16 +79,16 @@ WSGI_APPLICATION = 'lolshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'lolshop',
-#        'HOST': 'localhost',
-#        'PORT': '3306',
-#        'USER': 'root',
-#        'PASSWORD': 'Devil825',
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lolshop',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'siuhk2003',
+        'PASSWORD': 'devil825',
+    }
+}
 
 
 # Password validation
