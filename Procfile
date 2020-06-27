@@ -1,1 +1,1 @@
-web: gunicorn lolshop.wsgi --log-file -
+web: gunicorn lolshop.wsgi --timeout 15 --keep-alive 5 --log-level debug
