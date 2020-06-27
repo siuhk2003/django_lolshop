@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'lolshop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'lolshop',
         'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'PORT': '5432',
         'USER': 'siuhk2003',
-        'PASSWORD': 'devil825',
+        'PASSWORD': 'Devil825',
     }
 }
 
